@@ -42,4 +42,11 @@ public class PhoneBook {
         // совпадение с именем переданным ему если находит то возвращает номер если нет null
         return contactsByName.get(name);
     }
+//метод выводит список имен
+    public void printAllNames() {
+        //с помощью цикла проходим по коллекции и выводим в консоль имена
+        for (String name : allNames) {
+            System.out.println(name);
+        }
+    }
 }

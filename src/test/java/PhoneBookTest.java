@@ -1,8 +1,7 @@
 import org.example.PhoneBook;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 public class PhoneBookTest {
 
@@ -53,5 +52,19 @@ public class PhoneBookTest {
         //вызываем метод findByName передаем ему имя  Eve метод ищет имя в мапе  contactsByName
         // ожидаемый возврат null
         assertNull(phoneBook.findByName("Eve")); // Несуществующее имя
+    }
+// думаю этот тест не имеет смысла
+    @Test
+    public void testPrintAllNames() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Alice", "12345");
+        phoneBook.add("Bob", "98765");
+        phoneBook.add("Charlie", "2468");
+
+        // Проверяем вывод всех имен
+        String[] expectedNames = {"Alice", "Bob", "Charlie"};
+        String[] actualNames = new String[phoneBook.allNames.size()];
+        phoneBook.allNames.toArray(actualNames);
+        assertArrayEquals(expectedNames, actualNames);
     }
 }
