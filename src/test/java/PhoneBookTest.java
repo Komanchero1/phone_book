@@ -24,14 +24,17 @@ public class PhoneBookTest {
         assertEquals(3, phoneBook.add("Charlie", "2468"));
     }
 
-
+//тест метода для поиска имени по номеру
     @Test
     public void testFindByNumber() {
-        PhoneBook phoneBook = new PhoneBook();
-        phoneBook.add("Alice", "12345");
-        phoneBook.add("Bob", "98765");
+        PhoneBook phoneBook = new PhoneBook();//создается объект класса PhoneBook
+        phoneBook.add("Alice", "12345");//добавляем контакт
+        phoneBook.add("Bob", "98765");//добавляем контакт
+        //вызываем метод findByNumber передаем ему номер 12345 ожидаемый возврат "Alice"
         assertEquals("Alice", phoneBook.findByNumber("12345"));
+        //вызываем метод findByNumber передаем ему номер 98765 ожидаемый возврат "Bob"
         assertEquals("Bob", phoneBook.findByNumber("98765"));
+        //вызываем метод findByNumber передаем ему номер 99999 ожидаемый возврат null
         assertNull(phoneBook.findByNumber("99999")); // Несуществующий номер
     }
 }

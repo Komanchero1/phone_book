@@ -29,8 +29,10 @@ public class PhoneBook {
             return -1; // если имя существует возвращается -1 контакт не добавлен
         }
     }
-
+    // метод находит имя по номеру, в качестве аргумента принимает номер
     public String findByNumber(String number) {
-        return null;
+        //у contactsByNumber вызавается метод get который ищет в мапе
+        // совпадение с номером переданным ему если находит то возвращает имя если нет null
+       return contactsByNumber.get(number);
     }
 }
