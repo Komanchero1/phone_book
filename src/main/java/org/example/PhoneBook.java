@@ -36,7 +36,10 @@ public class PhoneBook {
        return contactsByNumber.get(number);
     }
 
+    //метод находит номер по имени,в качестве аргумента принимает имя
     public String findByName(String name) {
-        return null;
+        //у contactsByName вызавается метод get который ищет в мапе
+        // совпадение с именем переданным ему если находит то возвращает номер если нет null
+        return contactsByName.get(name);
     }
 }
