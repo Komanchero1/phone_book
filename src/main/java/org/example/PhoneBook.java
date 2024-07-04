@@ -29,4 +29,8 @@ public class PhoneBook {
             return -1; // если имя существует возвращается -1 контакт не добавлен
         }
     }
+
+    public String findByNumber(String number) {
+        return null;
+    }
 }

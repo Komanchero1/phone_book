@@ -2,6 +2,7 @@ import org.example.PhoneBook;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class PhoneBookTest {
 
@@ -21,5 +22,16 @@ public class PhoneBookTest {
         assertEquals(2, phoneBook.add("Bob", "98765"));
         //тоже что и первый раз  только меняем аргументы ожидаемый возврат 3
         assertEquals(3, phoneBook.add("Charlie", "2468"));
+    }
+
+
+    @Test
+    public void testFindByNumber() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Alice", "12345");
+        phoneBook.add("Bob", "98765");
+        assertEquals("Alice", phoneBook.findByNumber("12345"));
+        assertEquals("Bob", phoneBook.findByNumber("98765"));
+        assertNull(phoneBook.findByNumber("99999")); // Несуществующий номер
     }
 }
