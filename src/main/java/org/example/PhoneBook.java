@@ -35,4 +35,8 @@ public class PhoneBook {
         // совпадение с номером переданным ему если находит то возвращает имя если нет null
        return contactsByNumber.get(number);
     }
+
+    public String findByName(String name) {
+        return null;
+    }
 }

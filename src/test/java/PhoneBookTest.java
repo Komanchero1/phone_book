@@ -37,4 +37,21 @@ public class PhoneBookTest {
         //вызываем метод findByNumber передаем ему номер 99999 ожидаемый возврат null
         assertNull(phoneBook.findByNumber("99999")); // Несуществующий номер
     }
+
+
+    @Test
+    public void testFindByName() {
+        PhoneBook phoneBook = new PhoneBook();//создается объект класса PhoneBook
+        phoneBook.add("Alice", "12345");//добавляем контакт
+        phoneBook.add("Bob", "98765");//добавляем контакт
+        //вызываем метод findByName передаем ему имя  Alice метод ищет имя в мапе  contactsByName
+        // ожидаемый возврат 12345
+        assertEquals("12345", phoneBook.findByName("Alice"));
+        //вызываем метод findByName передаем ему имя  Bob метод ищет имя в мапе  contactsByName
+        // ожидаемый возврат 98765
+        assertEquals("98765", phoneBook.findByName("Bob"));
+        //вызываем метод findByName передаем ему имя  Eve метод ищет имя в мапе  contactsByName
+        // ожидаемый возврат null
+        assertNull(phoneBook.findByName("Eve")); // Несуществующее имя
+    }
 }
